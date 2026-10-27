@@ -1,7 +1,3 @@
-# quantnet-cpp
-
-Homework for the QuantNet / Baruch C++ Programming for Financial Engineering course.
-=======
 #  Baruch C++ Certificate for Financial Engineering
 
 ## Environment
