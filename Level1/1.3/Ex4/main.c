@@ -8,7 +8,9 @@
 
 int main(void)
 {
-    /* TODO */
+    int married = 0;
+
+    printf("Married or not: %s\n", married ? "Married" : "Not married");
 
     return 0;
 }
