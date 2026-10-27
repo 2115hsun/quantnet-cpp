@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # quantnet-cpp
 
 Homework for the QuantNet / Baruch C++ Programming for Financial Engineering course.
@@ -31,7 +30,6 @@ gcc -Wall -Wextra -std=c17 Main.c Print.c -o prog.exe
 ```
 
 End keyboard input (`getchar` / `EOF` exercises) with **Ctrl+Z, then Enter** on Windows.
->>>>>>> 850d4b01b0dadff8e86186aee702fcc1d9e35b77
 
 ## Layout
 
