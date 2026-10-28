@@ -7,7 +7,17 @@
 
 int main(void)
 {
-    /* TODO */
+    int i = 5;
+    int x;
+
+    x = i--;
+    printf("Post-decrement: x = %d, i = %d\n", x, i);
+
+    /* i--: use the value, then decrement*/
+
+    i = 5;
+    x = --i;
+    printf("Pre-decrement:  x = %d, i = %d\n", x, i);
 
     return 0;
 }
