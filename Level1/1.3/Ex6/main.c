@@ -9,7 +9,22 @@
 
 int main(void)
 {
-    /* TODO */
+    
+    int num;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    int shifted_right = num >> 2;
+    printf("Shifted right by 2: %d\n", shifted_right);
+
+    if (num < 0 && shifted_right < 0) {
+        printf("Arithmetic shift performed (1 shifted in on the left)\n");
+    } else if (num < 0 && shifted_right >= 0) {
+        printf("Logical shift performed (0 shifted in on the left)\n");
+    } else {
+        printf("0 shifted in on the left; logical and arithmetic shifts give the same result for non-negative numbers\n");
+    }
 
     return 0;
 }
