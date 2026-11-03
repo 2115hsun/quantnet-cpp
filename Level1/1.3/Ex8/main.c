@@ -14,13 +14,13 @@ int main()
     int z;
 
     x*=3+2;
-    printf("x=%d\n", x);    /* prints: TODO */
+    printf("x=%d\n", x);    /* prints: 10 */
 
     x*=y=z=4;
-    printf("x=%d\n", x);    /* prints: TODO */
+    printf("x=%d\n", x);    /* prints: 40 */
 
     x=y==z;
-    printf("x=%d\n", x);    /* prints: TODO */
+    printf("x=%d\n", x);    /* prints: 1 */
 
     return 0;
 }
