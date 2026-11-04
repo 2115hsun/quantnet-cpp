@@ -9,7 +9,17 @@
 
 int main(void)
 {
-    /* TODO */
+    const int start = 0;
+    const int end = 300;
+    const int step = 20;
+
+    printf("%10s %10s\n", "Fahrenheit", "Celsius");
+    int fahrenheit = start;
+    while (fahrenheit <= end) {
+        double celsius = (5.0 / 9) * (fahrenheit - 32);
+        printf("%10d %10.1f\n", fahrenheit, celsius);
+        fahrenheit += step;
+    }
 
     return 0;
 }
