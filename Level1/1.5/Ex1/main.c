@@ -6,9 +6,16 @@
 
 #include <stdio.h>
 
+double minus(double a, double b)
+{
+    return a - b;
+}
+
 int main(void)
 {
-    /* TODO */
+    int a = 10;
+    int b = 5;
 
+    printf("The difference is: %f\n", minus(a, b));
     return 0;
 }
