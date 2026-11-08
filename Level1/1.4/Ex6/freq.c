@@ -41,7 +41,6 @@ int main(void)
     }
 
 }
-
 printf("Count of 0s: %d\n", zeros);
 printf("Count of 1s: %d\n", ones);
 printf("Count of 2s: %d\n", twos);
