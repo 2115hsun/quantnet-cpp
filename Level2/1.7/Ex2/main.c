@@ -38,6 +38,9 @@ int main()
 /* Implement the Length() function here */
 int Length(char str[])
 {
-    /* TODO */
-    return 0;
+    int k = 0;
+    while (str[k] != '\0') {
+        k++;
+    }
+    return k;
 }
