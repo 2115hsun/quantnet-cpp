@@ -10,7 +10,13 @@
 
 int main(void)
 {
-    /* TODO */
+    int a = 10;
+    int b = 20;
+    int c = 15;
+    int max2 = MAX2(a, b);
+    int max3 = MAX3(a, b, c);
+    printf("Max of %d and %d is: %d\n", a, b, max2);
+    printf("Max of %d, %d and %d is: %d\n", a, b, c, max3);
 
     return 0;
 }

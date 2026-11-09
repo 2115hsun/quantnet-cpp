@@ -11,7 +11,10 @@
 
 int main(void)
 {
-    /* TODO */
+    int a = 10;
+    int b = 20;
+    PRINT1(a);
+    PRINT2(a, b);
 
     return 0;
 }
