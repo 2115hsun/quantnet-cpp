@@ -7,9 +7,22 @@
 
 #include <stdio.h>
 
+struct Article {
+    int article_number;
+    int quantity;
+    char description[21];
+};
+
+void Print(struct Article *p)
+{
+    printf("Article Number: %d\n", p->article_number);
+    printf("Quantity: %d\n", p->quantity);
+    printf("Description: %s\n", p->description);
+}
+
 int main(void)
 {
-    /* TODO */
-
+    struct Article article = {12345, 10, "Sample Article"};
+    Print(&article);
     return 0;
 }

@@ -8,7 +8,25 @@
 
 int main(void)
 {
-    /* TODO */
+    char filename[100];
+    printf("Enter the output filename: ");
+    scanf("%99s", filename);
+    FILE *f = fopen(filename, "w");
+    if (f == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+    int c;
+    printf("Enter text (press CTRL + A to end):\n");
 
+    while ((c = getchar()) != EOF) {
+        if (c == 1) { // Check for CTRL + A
+            printf("CTRL + A is a correct ending.\n");
+            break;
+        }
+        fputc(c, f); // Write the character to the file
+    }
+    fclose(f);
     return 0;
+
 }
