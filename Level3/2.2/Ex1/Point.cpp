@@ -6,6 +6,9 @@
 #include "Point.hpp"
 #include <sstream>
 
+Point::Point() : m_x(0.0), m_y(0.0) {}
+Point::~Point() {}
+
 double Point::GetX() const
 {
     return m_x;
