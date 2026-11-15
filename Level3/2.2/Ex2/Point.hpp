@@ -11,10 +11,20 @@
 class Point
 {
 private:
-    /* TODO: data members */
+    double m_x;
+    double m_y;
 
 public:
-    /* TODO: constructors, destructor, member functions */
+    Point(); // Default constructor
+    ~Point(); // Destructor
+    double GetX() const;
+    double GetY() const;
+    void SetX(double x);
+    void SetY(double y);
+    std::string ToString() const;
+
+    double DistanceOrigin() const;
+    double Distance(Point p) const;
 };
 
-#endif /* POINT_HPP */
+#endif
