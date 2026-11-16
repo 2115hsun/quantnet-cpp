@@ -1,23 +1,23 @@
 /*
- * Level 2 - 1.9 Exercise 1
- * Read characters from the keyboard and echo them line by line (when
- * Enter is pressed). Stop on ^A (value 1) and print
- * "CTRL + A is a correct ending."
-*/
+ * Objective:
+ *   Read characters from the keyboard and echo them to the screen line by
+ *   line. Entering ^A (CTRL + A) ends the program with the message
+ *   "CTRL + A is a correct ending."
+ */
 
 #include <stdio.h>
 
 int main(void)
 {
-    int c;
+    int c;      /* Current input character; an int so it can also hold EOF */
     printf("Enter text (press CTRL + A to end):\n");
 
     while ((c = getchar()) != EOF) {
-        if (c == 1) { // Check for CTRL + A
+        if (c == 1) {           /* ^A has the value 1 */
             printf("CTRL + A is a correct ending.\n");
             break;
         }
-        putchar(c); // Echo the character
+        putchar(c);             /* Echo the character */
     }
 
     return 0;

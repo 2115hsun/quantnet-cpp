@@ -1,22 +1,24 @@
 /*
- * Level 2 - 1.7 Exercise 3
- * Predict the output of each numbered line and write it in the comment beside it.
+ * Objective:
+ *   Predict what each numbered line prints. The program walks the array
+ *   a[] by index, by pointer, by pointer plus offset and backwards, to
+ *   show that array indexing and pointer arithmetic are equivalent.
  */
 
 /* Predict what will be printed on the screen */
 
 #include <stdio.h>
 
-#define PRD(a) printf("%d", (a) )   // Print decimal
-#define NL printf("\n");            // Print new line
+#define PRD(a) printf("%d", (a) )
+#define NL printf("\n");
 
 // Create and initialise array
 int a[]={0, 1, 2, 3, 4};
 
 int main()
 {
-    int i;
-    int* p;
+    int i;      // Loop index
+    int* p;     // Pointer used to walk through a[]
 
     for (i=0; i<=4; i++) PRD(a[i]);                     // 1   prints: 01234
     NL;
