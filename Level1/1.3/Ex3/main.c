@@ -1,0 +1,27 @@
+/*
+ * Level 1.3 - Exercise 3
+ * Predict the output of each printf and write it in the comment beside it.
+ */
+
+/* Operators */
+
+#include <stdio.h>
+
+int main()
+{
+    int x;
+
+    x=-3+4*5-6;
+    printf("x=%d\n", x);    /* prints: 11 */
+
+    x=3+4%5-6;
+    printf("x=%d\n", x);    /* prints: 1 */
+
+    x=-3*4%-6/5;
+    printf("x=%d\n", x);    /* prints: 0 */
+
+    x=(7+6)%5/2;
+    printf("x=%d\n", x);    /* prints: 1 */
+
+    return 0;
+}
