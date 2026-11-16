@@ -12,14 +12,29 @@
 
 #include <string>
 #include "Point.hpp"
+#include <cmath>
+#include <sstream>
 
 class Line
 {
 private:
-    /* TODO: data members */
+    Point m_p1;
+    Point m_p2;
 
 public:
-    /* TODO: constructors, destructor, member functions */
+    Line(); // Default constructor
+    Line (const Point& p1, const Point& p2); // Constructor with parameters
+    Line(const Line& l); // Copy constructor
+    ~Line(); // Destructor
+
+    const Point& P1() const; // Getter for first point
+    const Point& P2() const; // Getter for second point
+
+    void P1(const Point& p1); // Setter for first point
+    void P2(const Point& p2); // Setter for second point
+
+    std::string ToString() const; // String description of the line
+    double Length() const; // Length of the line
 };
 
-#endif /* LINE_HPP */
+#endif // LINE_HPP
