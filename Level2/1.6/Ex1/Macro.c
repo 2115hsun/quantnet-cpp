@@ -1,8 +1,8 @@
 /*
  * Objective:
- *   Demonstrate macros with arguments. main() gives the variables a and b
- *   a value, then prints a with PRINT1 and both a and b with PRINT2.
- *   Both macros are defined in the include file Defs.h.
+ *   Trying out macros with arguments. I give a and b values in main(),
+ *   then print a with PRINT1 and both of them with PRINT2. The macros
+ *   live in Defs.h.
  */
 
 #include <stdio.h>
@@ -10,14 +10,14 @@
 
 int main(void)
 {
-    /* Declare and initialise the two variables to print */
+    /* The two values I want to print */
     int a = 10;
     int b = 20;
 
-    /* Print a; the preprocessor replaces PRINT1(a) with a printf() call */
+    /* The preprocessor swaps PRINT1(a) out for a printf() call */
     PRINT1(a);
 
-    /* Print a and b with the two-argument macro */
+    /* Same idea, but with two arguments */
     PRINT2(a, b);
 
     return 0;

@@ -1,8 +1,8 @@
 /*
  * Objective:
- *   Predict what each numbered line prints. The program walks the array
- *   a[] by index, by pointer, by pointer plus offset and backwards, to
- *   show that array indexing and pointer arithmetic are equivalent.
+ *   Predict what each numbered line prints. The loops go through a[] by
+ *   index, by pointer, by pointer plus an offset and backwards, which
+ *   shows that indexing and pointer arithmetic do the same thing.
  */
 
 /* Predict what will be printed on the screen */
@@ -18,7 +18,7 @@ int a[]={0, 1, 2, 3, 4};
 int main()
 {
     int i;      // Loop index
-    int* p;     // Pointer used to walk through a[]
+    int* p;     // Pointer I use to walk through a[]
 
     for (i=0; i<=4; i++) PRD(a[i]);                     // 1   prints: 01234
     NL;

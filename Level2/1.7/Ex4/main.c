@@ -1,25 +1,25 @@
 /*
  * Objective:
- *   Ask the user for a day number (1-7) and print its name with the
- *   function DayName(), e.g. "Day 1 is a Sunday". The day names are
- *   hard-coded in an array of strings.
+ *   Ask for a day number (1-7) and print its name with DayName(), so 1
+ *   gives "Day 1 is a Sunday". I hard-coded the day names in an array of
+ *   strings.
  */
 
 #include <stdio.h>
 
 /*
- * DayName: prints the name of the given day number.
- *   day: day number, 1 = Sunday ... 7 = Saturday
+ * DayName: prints the name of a day number.
+ *   day: 1 = Sunday ... 7 = Saturday
  */
 void DayName(int day)
 {
-    /* Array of strings: each element points to one day name.
-       Index 0 is Sunday, so day number n is stored at index n-1. */
+    /* Each element points to one day name. Sunday is at index 0,
+       so day n is at index n-1. */
     char *day_names[] = {
         "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
     };
 
-    /* Check the range first so day_names is never read out of bounds */
+    /* Check the range first so I never read past the end of the array */
     if (day >= 1 && day <= 7) {
         printf("Day %d is a %s\n", day, day_names[day - 1]);
     } else {
@@ -29,9 +29,9 @@ void DayName(int day)
 
 int main(void)
 {
-    int day;            /* Day number entered by the user */
+    int day;            /* Day number the user types in */
 
-    /* Ask for and read the day number */
+    /* Ask for the day number and read it */
     printf("Enter a day number (1-7): ");
     scanf("%d", &day);
 

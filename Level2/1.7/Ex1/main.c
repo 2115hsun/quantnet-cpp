@@ -1,39 +1,38 @@
 /*
  * Objective:
- *   Swap the values of two variables with a function Swap() that takes
- *   pointers to them. C passes arguments by value, so Swap(int, int)
- *   would only swap local copies; passing the addresses lets Swap()
- *   change the caller's variables. i and j are declared, initialised
- *   and printed in main().
+ *   Swap two variables with a Swap() function that takes pointers. C passes
+ *   arguments by value, so if Swap() took plain ints it would only swap its
+ *   own copies. Passing the addresses lets it change i and j in main(),
+ *   where I declare, set and print them.
  */
 
 #include <stdio.h>
 
 /*
- * Swap: exchanges the values stored at two addresses.
+ * Swap: swaps the values at two addresses.
  *   i: pointer to the first int
  *   j: pointer to the second int
  */
 void Swap(int *i, int *j)
 {
-    int temp = *i;      /* Save the first value before it is overwritten */
-    *i = *j;            /* Copy the second value into the first variable */
-    *j = temp;          /* Put the saved first value into the second variable */
+    int temp = *i;      /* Hang on to the first value before I overwrite it */
+    *i = *j;            /* Copy the second value into the first */
+    *j = temp;          /* Put the saved first value into the second */
 }
 
 int main(void)
 {
-    /* Declare and initialise the two variables to swap */
+    /* The two values I'm going to swap */
     int i = 201;
     int j = 497;
 
-    /* Pointers holding the addresses of i and j, passed to Swap() */
+    /* Pointers to i and j that I pass to Swap() */
     int *p_i = &i;
     int *p_j = &j;
 
     printf("Before swap: i = %d, j = %d\n", i, j);
 
-    /* Swap through the pointers, then show that i and j changed */
+    /* Swap through the pointers, then print again to check it worked */
     Swap(p_i, p_j);
     printf("After swap: i = %d, j = %d\n", i, j);
 

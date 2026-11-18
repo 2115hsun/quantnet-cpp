@@ -1,22 +1,22 @@
 /*
  * Objective:
- *   Print the contents of a struct Article (article number, quantity and a
- *   20-character description). The Article is initialised where it is
- *   declared and printed by Print(), which receives its address.
+ *   Print the contents of an Article struct (article number, quantity and
+ *   a 20-character description). I fill in the Article when I declare it,
+ *   then print it with Print(), which takes its address.
  */
 
 #include <stdio.h>
 
-/* An article in stock */
+/* One article in stock */
 struct Article {
     int article_number;
     int quantity;
-    char description[21];       /* 20 characters + '\0' */
+    char description[21];       /* 20 characters plus the '\0' */
 };
 
 /*
  * Print: prints every field of an Article.
- *   p: address of the Article to print
+ *   p: address of the Article
  */
 void Print(struct Article *p)
 {
@@ -28,10 +28,10 @@ void Print(struct Article *p)
 
 int main(void)
 {
-    /* Initialise the fields in declaration order: number, quantity, description */
+    /* Values go in the same order as the fields: number, quantity, description */
     struct Article article = {12345, 10, "Sample Article"};
 
-    /* Pass the address so Print() reads the original struct instead of a copy */
+    /* I pass the address so Print() works with the original struct, not a copy */
     Print(&article);
     return 0;
 }

@@ -1,8 +1,8 @@
 /*
  * Objective:
- *   Read a string of at most 30 characters from the keyboard and print its
- *   length using Length(). Length() receives the address of the char array
- *   and counts characters up to the terminating '\0'.
+ *   Read up to 30 characters from the keyboard and print how long the
+ *   string is with my own Length() function. Length() gets the address of
+ *   the char array and counts characters until it hits the '\0'.
  */
 
 /* Calculate the length of a string */
@@ -21,7 +21,7 @@ int main()
     // Print intro text
     printf("Type up to %d chars. Exit with ^Z\n", MAXLINE);
 
-    // Get the characters until EOF or until the buffer is full
+    // Keep reading until EOF or until the buffer is full
     while ((c=getchar())!=EOF && i<MAXLINE)
     {
         // Append entered character to string
@@ -30,24 +30,24 @@ int main()
 
     string[i]='\0';
 
-    // Print the length computed by Length()
+    // Print the length I get back from Length()
     printf("String length is %d\n", Length(string));
 
     return 0;
 }
 
 /*
- * Length: returns the number of characters in a '\0'-terminated string,
- *         not counting the '\0' itself (same result as strlen()).
- *   str: address of the first character of the string
+ * Length: returns how many characters are in the string, not counting
+ *         the '\0' (the same answer strlen() would give).
+ *   str: address of the first character
  */
 int Length(char str[])
 {
-    int k = 0;                  // Number of characters counted so far
+    int k = 0;                  // How many characters I've counted so far
 
-    // Step through the array until the terminating '\0' is reached
+    // Keep going until I reach the '\0'
     while (str[k] != '\0') {
-        k++;                    // One more character before the end
+        k++;                    // One more character
     }
 
     return k;
