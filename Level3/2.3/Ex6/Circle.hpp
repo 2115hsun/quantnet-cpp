@@ -1,9 +1,7 @@
 /*
- * Level 3 - 2.3 Exercise 6 (Circle.hpp)
- * Circle with a centre Point and m_radius. Constructors, destructor,
- * CentrePoint() and Radius() getters/setters, Diameter(), Area(),
- * Circumference() and ToString(). Apply the same const / reference
- * improvements as Line. For M_PI: #define _USE_MATH_DEFINES before <cmath>.
+ * Objective: Implement a Circle class that uses the Point class to represent the centre of the circle. 
+ * The Circle class should have a radius and provide methods to calculate the diameter, area, and circumference of the circle. 
+ * Additionally, implement a method to return a string representation of the circle's properties.
 */
 
 #ifndef CIRCLE_HPP
@@ -11,14 +9,34 @@
 
 #include <string>
 #include "Point.hpp"
+#include <cmath>
+#include <sstream>
+
+#define _USE_MATH_DEFINES
 
 class Circle
 {
 private:
-    /* TODO: data members */
+    Point m_centre; // A unique circle is defined by its centre point and radius
+    double m_radius;
 
 public:
-    /* TODO: constructors, destructor, member functions */
+    Circle(); // Default constructor
+    Circle(const Point& centre, double radius); // Constructor with parameters
+    Circle(const Circle& c); // Copy constructor
+    ~Circle(); // Destructor
+
+    const Point& CentrePoint() const; // Getter for centre point
+    double Radius() const; // Getter for radius
+
+    void CentrePoint(const Point& centre); // Setter for centre point
+    void Radius(double radius); // Setter for radius
+
+    double Diameter() const; // Diameter of the circle
+    double Area() const; // Area of the circle
+    double Circumference() const; // Circumference of the circle
+
+    std::string ToString() const; // String description of the circle
 };
 
 #endif /* CIRCLE_HPP */
