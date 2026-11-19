@@ -1,8 +1,7 @@
 /*
- * Objective: Implement a Circle class that uses the Point class to represent the centre of the circle. 
- * The Circle class should have a radius and provide methods to calculate the diameter, area, and circumference of the circle. 
- * Additionally, implement a method to return a string representation of the circle's properties.
-*/
+ * Objective:
+ *   Header for my Circle class, the same one as Exercise 6 with no changes.
+ */
 
 #ifndef CIRCLE_HPP
 #define CIRCLE_HPP
@@ -17,7 +16,7 @@
 class Circle
 {
 private:
-    Point m_centre; // A unique circle is defined by its centre point and radius
+    Point m_centre; // Centre point. With the radius, it fully defines the circle
     double m_radius;
 
 public:
@@ -36,7 +35,7 @@ public:
     double Area() const; // Area of the circle
     double Circumference() const; // Circumference of the circle
 
-    std::string ToString() const; // String description of the circle
+    std::string ToString() const; // e.g. "Circle with centre at Point(0, 0) and radius 1"
 };
 
 #endif /* CIRCLE_HPP */

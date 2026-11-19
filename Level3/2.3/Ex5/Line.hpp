@@ -1,11 +1,12 @@
 /*
- * Level 3 - 2.3 Exercise 5 (Line.hpp)
- * Line with a start and end Point (composition). Default constructor
- * (points at 0, 0), constructor with start and end points, copy
- * constructor, destructor, overloaded getters/setters P1() and P2(),
- * ToString() and Length() (delegates to Point::Distance()).
- * Use const arguments, const functions and pass by reference.
-*/
+ * Objective:
+ *   A line holds two Point objects, its start and end point (composition). 
+ *   It has a default constructor (both points at 0, 0), 
+ *   a constructor that takes the two points, a copy constructor, a
+ *   destructor, overloaded P1()/P2() getters and setters, ToString() and
+ *   Length(). I pass Points by const reference and made every function that
+ *   doesn't change the line const.
+ */
 
 #ifndef LINE_HPP
 #define LINE_HPP
@@ -18,8 +19,8 @@
 class Line
 {
 private:
-    Point m_p1;
-    Point m_p2;
+    Point m_p1; // Start point
+    Point m_p2; // End point
 
 public:
     Line(); // Default constructor
@@ -27,13 +28,13 @@ public:
     Line(const Line& l); // Copy constructor
     ~Line(); // Destructor
 
-    const Point& P1() const; // Getter for first point
-    const Point& P2() const; // Getter for second point
+    const Point& P1() const; // Getter for the start point
+    const Point& P2() const; // Getter for the end point
 
-    void P1(const Point& p1); // Setter for first point
-    void P2(const Point& p2); // Setter for second point
+    void P1(const Point& p1); // Setter for the start point
+    void P2(const Point& p2); // Setter for the end point
 
-    std::string ToString() const; // String description of the line
+    std::string ToString() const; // e.g. "Line from Point(0, 0) to Point(3, 4)"
     double Length() const; // Length of the line
 };
 

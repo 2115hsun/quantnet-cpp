@@ -1,6 +1,14 @@
 /*
- * Objective: Replacing the setters and getters with inline implementations to speed up execution.
-*/
+ * Objective:
+ *   Header for my Point class with inline getters and setters, so short
+ *   calls get copied in place instead of being real function calls.
+ *
+ * Changes from previous version (2.3 Exercise 6):
+ *   - The setters are default inline: I define them inside the class.
+ *   - The getters are normal inline: I define them below the class with
+ *     the inline keyword. They have to stay in this header, or they won't
+ *     get inlined.
+ */
 
 #ifndef POINT_HPP
 #define POINT_HPP
@@ -10,8 +18,8 @@
 class Point
 {
 private:
-    double m_x;
-    double m_y;
+    double m_x; // x coordinate
+    double m_y; // y coordinate
 
 public:
 
@@ -20,25 +28,26 @@ public:
     Point(const Point& p);
     ~Point();
 
-    void X(double x) { m_x = x; } // Setter for x coordinate
-    void Y(double y) { m_y = y; } // Setter for y coordinate
-    
-    // Normal Inline getters for x and y coordinates
+    // Default inline setters, defined right here in the class
+    void X(double x) { m_x = x; } // Setter for x
+    void Y(double y) { m_y = y; } // Setter for y
+
+    // Normal inline getters, defined below the class
     double X() const;
     double Y() const;
 
-    // Other member functions
+    // Everything else is still in Point.cpp
     std::string ToString() const;
     double Distance() const;
     double Distance(const Point& p) const;
 };
 
-inline double Point::X() const // Inline getter for x coordinate
+inline double Point::X() const // Getter for x
 {
     return m_x;
 }
 
-inline double Point::Y() const // Inline getter for y coordinate
+inline double Point::Y() const // Getter for y
 {
     return m_y;
 }

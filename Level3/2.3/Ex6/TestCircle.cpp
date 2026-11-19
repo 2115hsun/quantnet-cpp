@@ -1,8 +1,9 @@
 /*
- * Objective: Implement a Circle class that uses the Point class to represent the centre of the circle. 
- * The Circle class should have a radius and provide methods to calculate the diameter, area, and circumference of the circle. 
- * Additionally, implement a method to return a string representation of the circle's properties.
-*/
+ * Objective:
+ *   Test program for my Circle class. I read a centre point and a radius
+ *   from the user, make a Circle and print its description, diameter, area
+ *   and circumference.
+ */
 
 #include <iostream>
 #include "Point.hpp"
@@ -10,7 +11,8 @@
 
 int main()
 {
-    double x, y, radius; // Variables to hold user input for the centre point and radius
+    // Ask the user for the centre point and the radius
+    double x, y, radius;
     std::cout << "Enter x coordinate for centre point: ";
     std::cin >> x;
     std::cout << "Enter y coordinate for centre point: ";
@@ -18,7 +20,7 @@ int main()
     std::cout << "Enter radius: ";
     std::cin >> radius;
 
-    Circle c(Point(x, y), radius); // Create a Circle object using the user input
+    Circle c(Point(x, y), radius); // Build the circle straight from the input
     std::cout << "Circle: " << c.ToString() << std::endl;
 
     std::cout << c.ToString() << std::endl;

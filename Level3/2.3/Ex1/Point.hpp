@@ -1,7 +1,12 @@
 /*
- * Level 3 - 2.3 Exercise 1 (Point.hpp)
- * Add DistanceOrigin() and Distance(Point p) using std::sqrt from <cmath>.
-*/
+ * Objective:
+ *   Header for my Point class with two extra constructors, so I can see
+ *   when points get created, copied and destroyed.
+ *
+ * Changes from previous version (2.2 Exercise 2):
+ *   - Added a constructor that takes x and y.
+ *   - Added a copy constructor.
+ */
 
 #ifndef POINT_HPP
 #define POINT_HPP
@@ -11,8 +16,8 @@
 class Point
 {
 private:
-    double m_x;
-    double m_y;
+    double m_x; // x coordinate
+    double m_y; // y coordinate
 
 public:
     Point(); // Default constructor
@@ -23,10 +28,10 @@ public:
     double GetY() const;
     void SetX(double x);
     void SetY(double y);
-    std::string ToString() const;
+    std::string ToString() const; // e.g. "Point(1.5, 3.9)"
 
-    double DistanceOrigin() const;
-    double Distance(Point p) const;
+    double DistanceOrigin() const; // Distance to (0, 0)
+    double Distance(Point p) const; // Distance to another point (p is copied)
 };
 
 #endif

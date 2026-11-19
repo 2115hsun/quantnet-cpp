@@ -1,7 +1,8 @@
 /*
- * Level 3 - 2.3 Exercise 1 (Point.hpp)
- * Add DistanceOrigin() and Distance(Point p) using std::sqrt from <cmath>.
-*/
+ * Objective:
+ *   Header for my Point class. Distance() now takes the other point by
+ *   const reference, so no copy is made.
+ */
 
 #ifndef POINT_HPP
 #define POINT_HPP
@@ -11,8 +12,8 @@
 class Point
 {
 private:
-    double m_x;
-    double m_y;
+    double m_x; // x coordinate
+    double m_y; // y coordinate
 
 public:
     Point(); // Default constructor
@@ -23,10 +24,10 @@ public:
     double GetY() const;
     void SetX(double x);
     void SetY(double y);
-    std::string ToString() const;
+    std::string ToString() const; // e.g. "Point(1.5, 3.9)"
 
-    double DistanceOrigin() const;
-    double Distance(const Point& p) const;
+    double DistanceOrigin() const; // Distance to (0, 0)
+    double Distance(const Point& p) const; // const reference, so p isn't copied or changed
 };
 
 #endif

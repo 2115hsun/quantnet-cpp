@@ -1,62 +1,65 @@
 /*
- * Level 3 - 2.3 Exercise 6 (Circle.cpp)
- * Implementation of the Circle class.
-*/
-#define _USE_MATH_DEFINES
+ * Objective:
+ *   Implementation of my Circle class, the same as Exercise 6 with no changes.
+ */
+#define _USE_MATH_DEFINES // Has to come before <cmath> so M_PI gets defined
 #include "Circle.hpp"
 #include <cmath>
 #include <sstream>
 
-Circle::Circle() : m_centre(0, 0), m_radius(1) {} // Default constructor
+// Constructors and destructor. The default circle is at (0, 0) with radius 1
+Circle::Circle() : m_centre(0, 0), m_radius(1) {}
 
-Circle::Circle(const Point& centre, double radius) : m_centre(centre), m_radius(radius) {} // Constructor with parameters
+Circle::Circle(const Point& centre, double radius) : m_centre(centre), m_radius(radius) {}
 
-Circle::Circle(const Circle& c) : m_centre(c.m_centre), m_radius(c.m_radius) {} // Copy constructor
+Circle::Circle(const Circle& c) : m_centre(c.m_centre), m_radius(c.m_radius) {}
 
-Circle::~Circle() {} // Destructor
+Circle::~Circle() {}
 
-const Point& Circle::CentrePoint() const // Getter for centre point
+// Getters. The centre comes back as a const reference so it isn't copied
+const Point& Circle::CentrePoint() const
 {
     return m_centre;
 }
 
-double Circle::Radius() const // Getter for radius
+double Circle::Radius() const
 {
     return m_radius;
 }
 
-void Circle::CentrePoint(const Point& centre) // Setter for centre point
+// Setters
+void Circle::CentrePoint(const Point& centre)
 {
     m_centre = centre;
 }
 
-void Circle::Radius(double radius) // Setter for radius
+void Circle::Radius(double radius)
 {
     m_radius = radius;
 }
 
-double Circle::Diameter() const // Diameter of the circle
+// d = 2r
+double Circle::Diameter() const
 {
     return 2 * m_radius;
 }
 
-double Circle::Area() const // Area of the circle
+// A = pi * r^2
+double Circle::Area() const
 {
     return M_PI * m_radius * m_radius;
 }
 
-double Circle::Circumference() const // Circumference of the circle
+// C = 2 * pi * r
+double Circle::Circumference() const
 {
     return 2 * M_PI * m_radius;
 }
 
-std::string Circle::ToString() const // String description of the circle
+// I reuse Point::ToString() for the centre
+std::string Circle::ToString() const
 {
     std::ostringstream oss;
     oss << "Circle with centre at " << m_centre.ToString() << " and radius " << m_radius;
     return oss.str();
 }
-
-
-
-

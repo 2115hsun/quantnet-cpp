@@ -1,10 +1,13 @@
 /*
- * Level 3 - 2.2 Exercise 2 (TestPoint.cpp)
- * Extend the test program: print the distance to the origin and the
- * distance between two points.
+ * Objective:
+ *   Test program for my Point class. I read two points from the user and
+ *   print the first one's distance to the origin and the distance between
+ *   the two.
  *
- * Build: g++ -Wall -Wextra -std=c++17 Point.cpp TestPoint.cpp -o main.exe
-*/
+ * Changes from previous version (2.2 Exercise 1):
+ *   - Read a second point.
+ *   - Print DistanceOrigin() and Distance().
+ */
 
 
 #include <iostream>
@@ -12,6 +15,7 @@
 
 int main()
 {
+    // Ask the user for the first point
     double x, y;
     std::cout << "Enter x coordinate: ";
     std::cin >> x;
@@ -19,6 +23,7 @@ int main()
     std::cout << "Enter y coordinate: ";
     std::cin >> y;
 
+    // Default constructor first, then the setters fill in the values
     Point p;
     p.SetX(x);
     p.SetY(y);
@@ -26,6 +31,7 @@ int main()
     std::cout << "Point: " << p.ToString() << std::endl;
     std::cout << "X: " << p.GetX() << ", Y: " << p.GetY() << std::endl;
 
+    // Second point, made the same way
     Point p2;
     std::cout << "Enter x coordinate for second point: ";
     std::cin >> x;

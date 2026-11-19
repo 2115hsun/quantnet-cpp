@@ -1,15 +1,17 @@
 /*
- * Level 3 - 2.2 Exercise 2 (Point.cpp)
- * Implementation of the Point class.
-*/
+ * Objective:
+ *   Implementation of my Point class from Point.hpp.
+ */
 
 #include "Point.hpp"
 #include <cmath>
 #include <sstream>
 
+// The default constructor starts the point at (0, 0)
 Point::Point() : m_x(0.0), m_y(0.0) {}
 Point::~Point() {}
 
+// Getters
 double Point::GetX() const
 {
     return m_x;
@@ -20,6 +22,7 @@ double Point::GetY() const
     return m_y;
 }
 
+// Setters
 void Point::SetX(double x)
 {
     m_x = x;
@@ -30,6 +33,7 @@ void Point::SetY(double y)
     m_y = y;
 }
 
+// I build the string with a stringstream so the doubles get converted for me
 std::string Point::ToString() const
 {
     std::stringstream ss;
@@ -37,11 +41,13 @@ std::string Point::ToString() const
     return ss.str();
 }
 
+// Pythagoras with the origin, so it's just sqrt(x^2 + y^2)
 double Point::DistanceOrigin() const
 {
     return std::sqrt(m_x * m_x + m_y * m_y);
 }
 
+// Pythagoras on the differences between the two points
 double Point::Distance(Point p) const
 {
     double dx = p.m_x - m_x;

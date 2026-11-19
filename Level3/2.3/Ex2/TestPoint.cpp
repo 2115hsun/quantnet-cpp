@@ -1,10 +1,8 @@
 /*
- * Level 3 - 2.3 Exercise 1 (TestPoint.cpp)
- * Extend the test program: print the distance to the origin and the
- * distance between two points.
- *
- * Build: g++ -Wall -Wextra -std=c++17 Point.cpp TestPoint.cpp -o main.exe
-*/
+ * Objective:
+ *   Test program for my Point class, run again after switching Distance()
+ *   to a const reference.
+ */
 
 
 #include <iostream>
@@ -12,6 +10,7 @@
 
 int main()
 {
+    // Ask the user for the first point
     double x, y;
     std::cout << "Enter x coordinate: ";
     std::cin >> x;
@@ -19,10 +18,12 @@ int main()
     std::cout << "Enter y coordinate: ";
     std::cin >> y;
 
+    // Make the point straight from the input with the (x, y) constructor
     Point p(x, y);
     std::cout << "Point: " << p.ToString() << std::endl;
     std::cout << "X: " << p.GetX() << ", Y: " << p.GetY() << std::endl;
 
+    // Second point
     std::cout << "Enter x coordinate for second point: ";
     std::cin >> x;
     std::cout << "Enter y coordinate for second point: ";
@@ -30,6 +31,7 @@ int main()
     Point p2(x, y);
 
     std::cout << "Distance to origin: " << p.DistanceOrigin() << std::endl;
+    // No copy of p2 this time, Distance() just gets a reference to it
     std::cout << "Distance between points: " << p.Distance(p2) << std::endl;
 
     return 0;

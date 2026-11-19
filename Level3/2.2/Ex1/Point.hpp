@@ -1,9 +1,9 @@
 /*
- * Level 3 - 2.2 Exercise 1 (Point.hpp)
- * Point class with private m_x, m_y. Public: default constructor,
- * destructor, GetX()/GetY(), SetX()/SetY(), and ToString() returning
- * e.g. "Point(1.5, 3.9)" (build it with std::stringstream).
-*/
+ * Objective:
+ *   Header for my Point class. It keeps the x and y coordinates private and
+ *   gives me a default constructor, a destructor, getters and setters for
+ *   x and y, and ToString() for a text version of the point.
+ */
 
 #ifndef POINT_HPP
 #define POINT_HPP
@@ -13,8 +13,8 @@
 class Point
 {
 private:
-    double m_x;
-    double m_y;
+    double m_x; // x coordinate
+    double m_y; // y coordinate
 
 public:
     Point(); // Default constructor
@@ -23,7 +23,7 @@ public:
     double GetY() const;
     void SetX(double x);
     void SetY(double y);
-    std::string ToString() const;
+    std::string ToString() const; // e.g. "Point(1.5, 3.9)"
 };
 
-#endif 
+#endif
