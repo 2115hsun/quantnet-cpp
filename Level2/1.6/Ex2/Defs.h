@@ -1,11 +1,7 @@
 /*
  * Objective:
- *   Same header as Exercise 1, plus two max macros. MAX2(x, y) gives the
- *   larger of two values and MAX3(x, y, z) gives the largest of three.
- *
- * Changes from previous version (1.6 Exercise 1):
- *   - Added MAX2(x, y).
- *   - Added MAX3(x, y, z), which uses MAX2 like the exercise asks.
+ *   Same header as Exercise 1, now with two max macros. MAX2(x, y) gives
+ *   the larger of two values and MAX3(x, y, z) gives the largest of three.
  */
 
 #include <stdio.h>

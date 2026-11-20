@@ -35,6 +35,6 @@ int main(void)
         }
         fputc(c, f);            /* Write the character to the file */
     }
-    fclose(f);                  /* Close the file, which also writes out anything still buffered */
+    fclose(f);                  /* Closing also writes out anything still buffered */
     return 0;
 }

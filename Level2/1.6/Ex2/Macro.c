@@ -5,7 +5,6 @@
  *
  * Changes from previous version (1.6 Exercise 1):
  *   - Added a third variable c.
- *   - Swapped the PRINT1/PRINT2 calls for tests of MAX2 and MAX3.
  */
 
 #include <stdio.h>
