@@ -1,11 +1,8 @@
 /*
  * Objective:
- *   A line holds two Point objects, its start and end point (composition). 
- *   It has a default constructor (both points at 0, 0), 
- *   a constructor that takes the two points, a copy constructor, a
- *   destructor, overloaded P1()/P2() getters and setters, ToString() and
- *   Length(). I pass Points by const reference and made every function that
- *   doesn't change the line const.
+ *   Header for my Line class. A line holds two Point objects, its start and
+ *   end point (composition). I pass Points by const reference and made
+ *   every function that doesn't change the line const.
  */
 
 #ifndef LINE_HPP

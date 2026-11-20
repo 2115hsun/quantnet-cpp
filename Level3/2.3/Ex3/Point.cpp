@@ -1,6 +1,8 @@
 /*
  * Objective:
- *   Implementation of my Point class from Point.hpp.
+ *   Implementation of my Point class from Point.hpp, with the getters and
+ *   setters renamed to X() and Y() and DistanceOrigin() renamed to
+ *   Distance().
  */
 
 #include "Point.hpp"

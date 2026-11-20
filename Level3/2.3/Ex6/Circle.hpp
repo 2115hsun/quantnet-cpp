@@ -1,9 +1,7 @@
 /*
  * Objective:
  *   Header for my Circle class. A circle has a centre Point and a radius.
- *   It has constructors, a destructor, getters and setters for the centre
- *   and radius, Diameter(), Area(), Circumference() and ToString(). Like
- *   Line, it passes Points by const reference and uses const functions.
+ *   Like Line, it passes Points by const reference and uses const functions.
  */
 
 #ifndef CIRCLE_HPP
@@ -19,8 +17,8 @@
 class Circle
 {
 private:
-    Point m_centre; // Centre point. With the radius, it fully defines the circle
-    double m_radius;
+    Point m_centre; // Centre point
+    double m_radius; // Radius
 
 public:
     Circle(); // Default constructor

@@ -3,7 +3,7 @@
  *   Test program for my Point class, plus a test with a const Point.
  *
  * Changes from previous version (2.3 Exercise 3):
- *   - Added a const Point cp(1.5, 3.9) and tried to change it and read it as part of the test.
+ *   - Added a const Point cp(1.5, 3.9) and tried to change it and read it.
  */
 
 

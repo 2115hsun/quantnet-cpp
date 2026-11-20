@@ -51,6 +51,7 @@ void Point::Y(double y)
     m_y = y;
 }
 
+// I build the string with a stringstream so the doubles get converted for me
 std::string Point::ToString() const
 {
     std::stringstream ss;

@@ -1,7 +1,7 @@
 /*
  * Objective:
- *   Header for my Point class with two extra constructors, so I can see
- *   when points get created, copied and destroyed.
+ *   Header for my Point class. The constructors and destructor print a
+ *   line, so I can see when points get created, copied and destroyed.
  *
  * Changes from previous version (2.2 Exercise 2):
  *   - Added a constructor that takes x and y.

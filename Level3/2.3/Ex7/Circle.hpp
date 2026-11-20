@@ -16,8 +16,8 @@
 class Circle
 {
 private:
-    Point m_centre; // Centre point. With the radius, it fully defines the circle
-    double m_radius;
+    Point m_centre; // Centre point
+    double m_radius; // Radius
 
 public:
     Circle(); // Default constructor

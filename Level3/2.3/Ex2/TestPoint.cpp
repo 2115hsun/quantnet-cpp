@@ -1,7 +1,8 @@
 /*
  * Objective:
  *   Test program for my Point class, run again after switching Distance()
- *   to a const reference.
+ *   to a const reference. I make both points with the (x, y) constructor
+ *   now.
  */
 
 

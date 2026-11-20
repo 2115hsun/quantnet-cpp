@@ -1,6 +1,7 @@
 /*
  * Objective:
- *   Implementation of my Point class from Point.hpp.
+ *   Implementation of my Point class from Point.hpp, now with the two
+ *   distance functions.
  */
 
 #include "Point.hpp"

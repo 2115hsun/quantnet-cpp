@@ -27,7 +27,7 @@ public:
     std::string ToString() const; // e.g. "Point(1.5, 3.9)"
 
     double DistanceOrigin() const; // Distance to (0, 0)
-    double Distance(const Point& p) const; // const reference, so p isn't copied or changed
+    double Distance(const Point& p) const; // p isn't copied or changed
 };
 
 #endif
