@@ -3,7 +3,7 @@
  *   Test program for Point, Line, and Circle classes and their operators. 
  *   Specifically the new Point operators (0, *, +, ==, =, *=) and the assignment operators for Line and Circle.
  * Changes:
- *   Re-run tests using Ostream << Operator for all classes
+ *   Experiment using constructors as conversion operators
  */
 
 #include <iostream>

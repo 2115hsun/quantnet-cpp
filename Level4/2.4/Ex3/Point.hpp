@@ -3,11 +3,8 @@
  *   Header for my Point class with inline getters and setters, so short
  *   calls get copied in place instead of being real function calls.
  *
- * Changes from previous version (2.3 Exercise 6):
- *   - The setters are default inline: I define them inside the class.
- *   - The getters are normal inline: I define them below the class with
- *     the inline keyword. They have to stay in this header, or they won't
- *     get inlined.
+ * Changes from previous version:
+ *   - Testing constructors as conversion operators
  */
 
 #ifndef POINT_HPP
@@ -25,6 +22,7 @@ private:
 public:
     Point();
     explicit Point(double value); // Constructor that accepts one double as an argument 
+    // if using explicit Point (double value), we will get an error "TestPoint.cpp:89:12: error: no match for 'operator==' (operand types are 'Point' and 'double')"
     Point(double x, double y);
     Point(const Point& p);
     ~Point();
