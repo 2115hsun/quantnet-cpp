@@ -1,6 +1,6 @@
 /*
  * Objective:
- *   Header for my Circle class, the same one as Exercise 3 with no changes.
+ *   Adding circle operator. 
  */
 
 #ifndef CIRCLE_HPP
@@ -8,14 +8,41 @@
 
 #include <string>
 #include "Point.hpp"
+#include <cmath>
+#include <sstream>
+
+#define _USE_MATH_DEFINES
 
 class Circle
 {
 private:
-    // TODO
+    Point m_centre; // Centre point
+    double m_radius; // Radius
 
 public:
-    // TODO
+    Circle(); // Default constructor
+    Circle(const Point& centre, double radius); // Constructor with parameters
+    Circle(const Circle& c); // Copy constructor
+    ~Circle(); // Destructor
+
+    const Point& CentrePoint() const; // Getter for centre point
+    double Radius() const; // Getter for radius
+
+    void CentrePoint(const Point& centre); // Setter for centre point
+    void Radius(double radius); // Setter for radius
+
+    double Diameter() const; // Diameter of the circle
+    double Area() const; // Area of the circle
+    double Circumference() const; // Circumference of the circle
+
+    Circle& operator = (const Circle& source);
+
+    std::string ToString() const; // e.g. "Circle with centre at Point(0, 0) and radius 1"
+
+    friend std::ostream& operator << (std::ostream& os, const Circle& c); // Friend for output stream operator
 };
 
-#endif
+// Global operator<< for Circle
+std::ostream& operator << (std::ostream& os, const Circle& c);
+
+#endif /* CIRCLE_HPP */
