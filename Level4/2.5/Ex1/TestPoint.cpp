@@ -1,7 +1,10 @@
 /*
  * Objective:
- *   Until now, we created objects on the stack, which is limited in size when creating many objects.
- *   This test program will explore creating objects on the heap using dynamic memory allocation.
+ *   This test program is creating objects on the heap instead of stack. 
+ *   - Creates Points with new using the default, (x, y), and copy constructors.
+ *   - Reads an array size from the user input and creates an array of Points on the heap with new[].
+ *   - Frees the memory allocated on the heap using delete and delete[].
+ *   - Shows that a stack array can't have a run-time size in standard C++. 
  */
 
 #include <iostream>
@@ -11,6 +14,7 @@
 
 int main()
 {
+    // Part A: Creating Points on the heap using different constructors
     Point* p1 = new Point(); // Create a default Point on the heap
     Point* p2 = new Point(1.0, 2.0); // Create a Point on the heap
     Point* p3 = new Point(*p1);
@@ -35,5 +39,22 @@ int main()
 
     delete c; // Free the memory allocated for the Circle
 
+
+    // Part B: Heap array of Points with run-time size
+    int size;
+    std::cout << "Enter array size: ";
+    std::cin >> size;
+
+    // Point stackPoint[size]; 
+    // Standard C++ does not allow this, because a stack arraw's size must be known at compile time. 
+    // GCC accepts it as non-standard extension; with -pedantic-errors stating "ISO C++ forbids variable length array 'stackPoint'"
+
+    Point* points = new Point[size]; // new Point [size] can only use the default constructor; 
+    for (int i = 0; i < size; ++i) 
+    {
+        points[i] = Point(i, i); // Initialize each Point in the array
+        std::cout << "points[" << i << "]: " << points[i] << std::endl;
+    }
+    delete[] points; // Free the memory allocated for the array of Points on the heap
     return 0;
 }
