@@ -13,10 +13,23 @@
 class Array
 {
 private:
-    // TODO
+    Point* m_data;
+    int m_size;
 
 public:
-    // TODO
+    Array(); // Default constructor
+    Array(int size); // Size elements 
+    Array(const Array& other); // Copy constructor
+    ~Array(); // Destructor
+
+    Array& operator=(const Array& other); // Assignment operator
+
+    int Size() const; // Get the size of the array
+    void SetElement(int index, const Point& p); // Ignore if index out of bounds
+    Point& GetElement(int index); // First element if index is out of bounds
+
+    Point& operator[](int index); // Access element by index
+    const Point& operator[](int index) const; // Access element by index (const version)
 };
 
 #endif
