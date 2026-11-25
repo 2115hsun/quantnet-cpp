@@ -1,24 +1,23 @@
 /*
- * Objective:
- *   Header for my Circle class. A circle has a centre Point and a radius.
- *   Like Line, it passes Points by const reference and uses const functions.
- */
+ * Objective: Implement a Circle class that uses the Point class to represent the centre of the circle. 
+ * The Circle class should have a radius and provide methods to calculate the diameter, area, and circumference of the circle. 
+ * Additionally, implement a method to return a string representation of the circle's properties.
+*/
 
 #ifndef CIRCLE_HPP
 #define CIRCLE_HPP
+#define _USE_MATH_DEFINES
 
 #include <string>
 #include "Point.hpp"
-#include <cmath>
-#include <sstream>
 
-#define _USE_MATH_DEFINES
+
 
 class Circle
 {
 private:
-    Point m_centre; // Centre point
-    double m_radius; // Radius
+    Point m_centre; // A unique circle is defined by its centre point and radius
+    double m_radius;
 
 public:
     Circle(); // Default constructor
@@ -36,7 +35,7 @@ public:
     double Area() const; // Area of the circle
     double Circumference() const; // Circumference of the circle
 
-    std::string ToString() const; // e.g. "Circle with centre at Point(0, 0) and radius 1"
+    std::string ToString() const; // String description of the circle
 };
 
 #endif /* CIRCLE_HPP */

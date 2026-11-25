@@ -1,10 +1,11 @@
 /*
  * Objective:
  *   This test program is creating objects on the heap instead of stack. 
- *   - Creates Points with new using the default, (x, y), and copy constructors.
- *   - Reads an array size from the user input and creates an array of Points on the heap with new[].
- *   - Frees the memory allocated on the heap using delete and delete[].
- *   - Shows that a stack array can't have a run-time size in standard C++. 
+ *   - Create an array of Point pointers with 3 elements on the heap. 
+ *   - Create for each element in the array a point on the heap. 
+ *   - Iterate the array and print each point in the array. 
+ *   - Iterate the array again and delete each point in the array. 
+ *   - Delete the array itself.  
  */
 
 #include <iostream>
@@ -39,22 +40,37 @@ int main()
 
     delete c; // Free the memory allocated for the Circle
 
+/*
+ * Memory layout:
+ *
+ *   arr  →  [ ptr0 ][ ptr1 ][ ptr2 ]     array of 3 Point pointers (new Point*[3])
+ *              ↓       ↓       ↓
+ *            Point   Point   Point       each created separately (new Point(...))
+ *
+ * Free in reverse: delete each Point first, then delete[] the pointer array.
+ */
 
-    // Part B: Heap array of Points with run-time size
-    int size;
-    std::cout << "Enter array size: ";
-    std::cin >> size;
+    // Part B: Array of pointers
 
-    // Point stackPoint[size]; 
-    // Standard C++ does not allow this, because a stack arraw's size must be known at compile time. 
-    // GCC accepts it as non-standard extension; with -pedantic-errors stating "ISO C++ forbids variable length array 'stackPoint'"
+    Point** arr = new Point*[3]; // an array of Point Pointers on the heap 
 
-    Point* points = new Point[size]; // new Point [size] can only use the default constructor; 
-    for (int i = 0; i < size; ++i) 
+    arr[0] = new Point(); // Create a default Point on the heap
+    arr[1] = new Point(3, 8); // Create a Point with (x, y)
+    arr[2] = new Point(*arr[1]); // Create a copy of the second Point on the heap
+
+    for (int i = 0; i < 3; ++i)
     {
-        points[i] = Point(i, i); // Initialize each Point in the array
-        std::cout << "points[" << i << "]: " << points[i] << std::endl;
+        std::cout << "arr[" << i << "]: " << *arr[i] << std::endl;
     }
-    delete[] points; // Free the memory allocated for the array of Points on the heap
+
+    for (int i = 0; i < 3; ++i)
+    {
+        delete arr[i]; // Free the memory allocated for each Point in the array
+    }
+
+    delete[] arr; // Free the memory allocated for the array of Point pointers
+
     return 0;
+    
 }
+

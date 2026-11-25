@@ -1,6 +1,6 @@
 /*
  * Objective:
- *   Header for my Point class. It keeps the x and y coordinates private and
+ *   It keeps the x and y coordinates private and
  *   gives me a default constructor, a destructor, getters and setters for
  *   x and y, and ToString() for a text version of the point.
  */

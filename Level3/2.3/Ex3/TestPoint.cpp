@@ -2,10 +2,6 @@
  * Objective:
  *   Test program for my Point class with the overloaded X(), Y() and
  *   Distance() functions.
- *
- * Changes from previous version (2.3 Exercise 2):
- *   - Use X() and Y() instead of GetX() and GetY().
- *   - Use Distance() instead of DistanceOrigin().
  */
 
 
