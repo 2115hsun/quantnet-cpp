@@ -10,13 +10,21 @@
 
 #include <string>
 
-class Shape
+namespace Dave::CAD
 {
-private:
-    // TODO
+    class Shape
+    {
+    private:
+        int m_id;
+    public:
+        Shape();
+        Shape(const Shape& source);
+        ~Shape();
+        Shape& operator = (const Shape& source);
 
-public:
-    // TODO
-};
+        std::string ToString() const;
+        int ID() const;
+    };
+}
 
 #endif
