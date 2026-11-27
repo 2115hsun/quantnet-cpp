@@ -1,7 +1,7 @@
 /*
  * Objective:
- *   Test program that deletes a Shape, Point and Line through Shape*
- *   pointers, before and after making the Shape destructor virtual.
+ *   Test program for the Shape hierarchy, with the code from the
+ *   assignment and my answers to its questions.
  */
 
 #include <iostream>
@@ -12,7 +12,13 @@
 
 int main()
 {
-    // TODO
+    using namespace Dave::CAD;
+    Shape* shapes[3];
+    shapes[0] = new Shape;
+    shapes[1] = new Point;
+    shapes[2] = new Line; 
 
-    return 0;
+    for (int i = 0; i < 3; ++i) {
+        delete shapes[i];
+    }
 }
