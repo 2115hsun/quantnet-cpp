@@ -1,24 +1,68 @@
 /*
  * Objective:
- *   Header for my Point class. ToString() now adds the Shape description.
+ *   Header for my Point class with inline getters and setters, so short
+ *   calls get copied in place instead of being real function calls.
  *
- * Changes from previous version (3.5 Exercise 1):
- *   - ToString() calls Shape::ToString() and appends the result.
+ * Changes from previous version:
+ *   - Derives from Shape
  */
 
 #ifndef POINT_HPP
 #define POINT_HPP
-
-#include <string>
+#include <ostream>
 #include "Shape.hpp"
 
-class Point
+#include <string>
+
+namespace Dave::CAD {
+class Point : public Shape
 {
 private:
-    // TODO
+    double m_x; // x coordinate
+    double m_y; // y coordinate
 
 public:
-    // TODO
+    Point();
+    explicit Point(double value); // Constructor that accepts one double as an argument 
+    // if using explicit Point (double value) without changing in main, we will get an error "TestPoint.cpp:89:12: error: no match for 'operator==' (operand types are 'Point' and 'double')"
+    Point(double x, double y);
+    Point(const Point& p);
+    ~Point();
+
+    // Default inline setters, defined right here in the class
+    void X(double x) { m_x = x; } // Setter for x
+    void Y(double y) { m_y = y; } // Setter for y
+
+    // Normal inline getters, defined below the class
+    double X() const;
+    double Y() const;
+
+    // Everything else is still in Point.cpp
+    std::string ToString() const;
+    double Distance() const;
+    double Distance(const Point& p) const;
+
+    // Operators
+    Point operator - () const; // Negate the coordinates
+    Point operator * (double factor) const; // Scale the coordinates
+    Point operator + (const Point& p) const; // Add coordinates
+    bool operator == (const Point& p) const; // Equally compare operator
+    Point& operator = (const Point& source); // Assignment operator
+    Point& operator *= (double factor); // Scale the coordinates & assign
+
+    // Friend declaration for the output stream operator
+    friend std::ostream& operator << (std::ostream& os, const Point& p);
+
 };
 
+inline double Point::X() const // Getter for x
+{
+    return m_x;
+}
+
+inline double Point::Y() const // Getter for y
+{
+    return m_y;
+}
+} // namespace Dave::CAD
 #endif
